@@ -15,7 +15,7 @@ class ReservaForm(forms.ModelForm):
     
     class Meta:
         model = Reserva
-        fields =  ['res_hora_reservada','res_fecha_pedido_reserva','res_desc_reserva','cli_rut']
+        fields =  "__all__"
 
         widgets = {
             "res_fecha_pedido_reserva": forms.SelectDateWidget()

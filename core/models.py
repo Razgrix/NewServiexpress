@@ -205,10 +205,10 @@ class Reserva(models.Model):
 
 
 class Servicio(models.Model):
+    serv_titulo = models.CharField(max_length=35)
     serv_descripcion = models.CharField(max_length=45)
     serv_costo = models.BigIntegerField()
-    serv_titulo = models.CharField(max_length=35)
-
+    
     def __str__(self):
         return self.serv_titulo
 
@@ -218,7 +218,7 @@ class TipoEmpleado(models.Model):
 
     
     def __str__(self):
-        return self.desc_empleado
+        return self.desc_tipo_empleado
 
 
 class TipoMarca(models.Model):

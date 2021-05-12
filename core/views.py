@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import BoletaFactura, Ciudad, Cliente, Comuna, DetalleServicio, Empleado, EmpleadoServicio, PagoServicio, PedidoOrden, PedidoOrdenProducto, Producto, Proveedor, RecepcionPedido, RecepcionPedidoProducto, Region, Reserva, Servicio, TipoEmpleado, TipoMarca, TipoPago, TipoUsuario, Usuario
-from .forms import UsuarioForm, ReservaForm, ProductoForm, RegionForm, CiudadForm, ComunaForm, ClienteForm, EmpleadoForm, TipoMarcaForm, ProveedorForm, TipoEmpleadoForm, TipoPagoForm, TipoUsuarioForm, PagoServicioForm, ServicioForm, PedidoOrdenForm, PedidoOrdenProductoForm, RecepcionPedidoForm, RecepcionPedidoProductoForm, DetalleServicioForm, EmpleadoServicioForm, BoletaFacturaPedidoForm
+from .models import *
+from .forms import *
 # Extra
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -27,10 +27,10 @@ def nosotros(request):
 
 def servicio(request):
     servicio = Servicio.objects.all()
-    dataServicio = {
+    data = {
         'servicio': servicio
     }
-    return render(request, 'core/servicio.html', dataServicio)
+    return render(request, 'core/servicio.html', data)
 
 
 def ubicacion(request):
